@@ -1,6 +1,28 @@
 import { useState, useEffect } from 'react';
 import { FaPhone, FaBars, FaTimes } from 'react-icons/fa';
 
+// Конфигурация Telegram
+const TELEGRAM_CONFIG = {
+  phone: '+79991234567', // Твой телефон
+  username: 'stroydom_consultant', // Твой username в Telegram (без @)
+  prefillMessage: 'Здравствуйте! Хочу заказать консультацию по строительству.', // Предзаполненное сообщение
+  welcomeMessage: 'Добро пожаловать! Чем могу помочь?' // Приветственное сообщение бота
+};
+
+// Функция для открытия Telegram
+const openTelegramConsultation = (serviceName = '') => {
+  let message = TELEGRAM_CONFIG.prefillMessage;
+  
+  if (serviceName) {
+    message += ` Интересует услуга: "${serviceName}"`;
+  }
+  
+  // Формируем ссылку для Telegram
+  const telegramUrl = `https://t.me/${TELEGRAM_CONFIG.username}?start=${encodeURIComponent(message)}`;
+  
+  // Открываем в новой вкладке
+  window.open(telegramUrl, '_blank');
+};
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('home');

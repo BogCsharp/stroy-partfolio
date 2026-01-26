@@ -107,8 +107,6 @@ const Services = () => {
   ];
 
   const toggleService = (id) => {
-    // Если кликаем по уже открытой карточке — закрываем её
-    // Если по другой — открываем новую, закрывая предыдущую
     setExpandedServiceId(expandedServiceId === id ? null : id);
   };
 
@@ -201,20 +199,19 @@ const Services = () => {
               
               <div className="flex flex-col sm:flex-row gap-3">
                 <button 
-                  className="flex-1 bg-yellow-500 hover:bg-yellow-600 text-white font-semibold py-3 px-4 rounded-lg transition duration-300"
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    console.log(`Заказана услуга: ${service.title}`);
-                  }}
-                >
-                  Заказать услугу
-                </button>
-                <button 
-                  className="flex-1 bg-gray-100 hover:bg-gray-200 text-gray-800 font-semibold py-3 px-4 rounded-lg transition duration-300"
-                  onClick={(e) => e.stopPropagation()}
-                >
-                  Получить смету
-                </button>
+  className="flex-1 bg-yellow-500 hover:bg-yellow-600 text-white font-medium py-2.5 px-4 rounded-lg transition duration-300 text-sm"
+  onClick={(e) => {
+    e.stopPropagation();
+    
+    const message = `Здравствуйте! Интересует услуга: "${service.title}". ${service.price}. Хочу заказать консультацию.`;
+    const username = 'nvmev';
+    
+    window.open(`https://t.me/${username}?start=${encodeURIComponent(message)}`, '_blank');
+  }}
+>
+  Заказать услугу
+</button>
+                
               </div>
               
               {/* Стрелка указывающая на карточку */}
@@ -229,22 +226,7 @@ const Services = () => {
   ))}
 </div>
 
-{/* Добавляем анимацию в style */}
-<style jsx>{`
-  @keyframes slideDown {
-    from {
-      opacity: 0;
-      transform: translateY(-10px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  .animate-slideDown {
-    animation: slideDown 0.3s ease-out;
-  }
-`}</style>
+
         {/* Дополнительная информация */}
         <div className="mt-20 bg-gradient-to-r from-blue-50 to-gray-50 rounded-2xl p-8 md:p-12">
           <div className="grid md:grid-cols-3 gap-8">
