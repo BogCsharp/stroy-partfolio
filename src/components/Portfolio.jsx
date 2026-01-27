@@ -4,7 +4,8 @@ import {
   FaChevronLeft, 
   FaChevronRight,
   FaCalendarAlt,
-  FaRulerCombined
+  FaRulerCombined,
+  FaTimes
 } from 'react-icons/fa';
 
 const Portfolio = () => {
@@ -15,7 +16,7 @@ const Portfolio = () => {
     {
       id: 1,
       title: 'Комплекс мероприятий по возведению монолитных конструкций',
-      description: 'Подготовка основания, монтаж опалубки, армирование, укладку/уплотнение бетонной смеси и уход за ней',
+      description: 'Подготовка основания, монтаж опалубки, армирование, укладка/уплотнение бетонной смеси и уход за ней',
       year: '2023',
       area: '250 м²',
       duration: '8 месяцев',
@@ -108,10 +109,8 @@ const Portfolio = () => {
   // Обработчик для видео-проектов
   const handleProjectClick = (project, index = 0) => {
     if (project.mediaType === 'video') {
-      // Для видео открываем в новой вкладке
       window.open(project.video, '_blank');
     } else {
-      // Для фото открываем модальное окно
       openModal(project, index);
     }
   };
@@ -138,7 +137,7 @@ const Portfolio = () => {
               key={project.id} 
               className="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden group flex flex-col h-full"
             >
-              {/* Изображение/видео проекта - ФИКСИРОВАННАЯ ВЕРСИЯ */}
+              {/* Изображение/видео проекта */}
               <div 
                 className="relative h-64 w-full overflow-hidden cursor-pointer flex-shrink-0"
                 onClick={() => handleProjectClick(project, 0)}
@@ -167,7 +166,7 @@ const Portfolio = () => {
                     </div>
                   </>
                 ) : (
-                  // ФОТО ПРОЕКТ - ФИКСИРОВАННАЯ ВЕРСИЯ
+                  // ФОТО ПРОЕКТ
                   <>
                     <img 
                       src={project.image} 
@@ -175,7 +174,6 @@ const Portfolio = () => {
                       className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                       loading="lazy"
                       onLoad={(e) => {
-                        // Плавное появление фото
                         e.target.style.opacity = '1';
                       }}
                       style={{ opacity: 0, transition: 'opacity 0.3s' }}
@@ -200,14 +198,12 @@ const Portfolio = () => {
                   </span>
                 </div>
                 
-                {/* Описание с фиксированной высотой и прокруткой */}
                 <div className="mb-4 flex-grow min-h-0">
                   <div className="text-gray-600 text-sm h-24 overflow-y-auto pr-2">
                     {project.description}
                   </div>
                 </div>
                 
-                {/* Характеристики (Площадь и Срок) */}
                 <div className="grid grid-cols-2 gap-3 mb-6">
                   <div className="flex items-center text-gray-700">
                     <div className="w-8 h-8 bg-gray-100 rounded-lg flex items-center justify-center mr-2">
@@ -230,7 +226,6 @@ const Portfolio = () => {
                   </div>
                 </div>
                 
-                {/* Кнопки */}
                 <div className="flex gap-3 mt-auto">
                   <button 
                     onClick={() => handleProjectClick(project, 0)}
@@ -263,88 +258,113 @@ const Portfolio = () => {
         </div>
       </div>
 
-      {/* Модальное окно с изображением (только для фото проектов) */}
+      {/* Модальное окно с изображением (АДАПТИВНАЯ ВЕРСИЯ) */}
       {selectedImage && selectedImage.mediaType !== 'video' && (
-        <div className="fixed inset-0 bg-black/90 z-[100] flex items-center justify-center p-4">
-          <div className="relative max-w-6xl w-full max-h-[90vh]">
-            {/* Кнопка закрытия */}
-            <button
-              onClick={closeModal}
-              className="absolute top-4 right-4 z-10 bg-white/20 backdrop-blur-sm text-white p-3 rounded-full hover:bg-white/30 transition duration-200"
-            >
-              ✕
-            </button>
+        <div className="fixed inset-0 bg-black/90 z-[100] flex flex-col items-center justify-center p-2 md:p-4">
+          {/* Кнопка закрытия - фиксированная вверху */}
+          <button
+            onClick={closeModal}
+            className="absolute top-4 right-4 z-20 bg-black/70 hover:bg-black text-white p-3 rounded-full transition duration-200"
+          >
+            <FaTimes className="text-2xl" />
+          </button>
+          
+          {/* Основной контейнер с вертикальным расположением на мобильных */}
+          <div className="relative w-full max-w-4xl h-full md:h-auto flex flex-col md:block">
             
-            {/* Навигационные кнопки (только если есть дополнительные фото) */}
-            {selectedImage.images && selectedImage.images.length > 1 && (
-              <>
-                <button
-                  onClick={prevImage}
-                  className="absolute left-4 top-1/2 transform -translate-y-1/2 z-10 bg-white/20 backdrop-blur-sm text-white p-3 rounded-full hover:bg-white/30 transition duration-200"
-                >
-                  <FaChevronLeft />
-                </button>
-                <button
-                  onClick={nextImage}
-                  className="absolute right-4 top-1/2 transform -translate-y-1/2 z-10 bg-white/20 backdrop-blur-sm text-white p-3 rounded-full hover:bg-white/30 transition duration-200"
-                >
-                  <FaChevronRight />
-                </button>
-              </>
-            )}
-            
-            {/* Изображение */}
-            <img
-              src={selectedImage.images && selectedImage.images.length > 0 
-                ? selectedImage.images[currentIndex] 
-                : selectedImage.image
-              }
-              alt={selectedImage.title}
-              className="w-full h-full object-contain max-h-[70vh] rounded-lg"
-            />
-            
-            {/* Информация о проекте */}
-            <div className="mt-6 bg-white rounded-lg p-6">
-              <div className="flex justify-between items-start mb-4">
-                <div>
-                  <h3 className="text-2xl font-bold text-gray-900">{selectedImage.title}</h3>
-                  <p className="text-gray-600">{selectedImage.description}</p>
-                </div>
-                <div className="text-right">
-                  {selectedImage.images && selectedImage.images.length > 0 && (
-                    <div className="text-sm text-gray-500">
-                      Фото {currentIndex + 1} из {selectedImage.images.length}
-                    </div>
-                  )}
-                </div>
-              </div>
+            {/* Изображение с фиксированной высотой */}
+            <div className="relative flex-grow md:flex-grow-0 flex items-center justify-center overflow-hidden rounded-t-lg md:rounded-lg bg-black/50">
+              <img
+                src={selectedImage.images && selectedImage.images.length > 0 
+                  ? selectedImage.images[currentIndex] 
+                  : selectedImage.image
+                }
+                alt={selectedImage.title}
+                className="w-auto h-auto max-w-full max-h-[50vh] md:max-h-[60vh] object-contain"
+              />
               
-              {/* Индикатор изображений (только если есть дополнительные фото) */}
+              {/* Навигационные кнопки для десктопа */}
               {selectedImage.images && selectedImage.images.length > 1 && (
-                <div className="flex gap-2 justify-center mt-4">
-                  {selectedImage.images.map((_, idx) => (
-                    <button
-                      key={idx}
-                      onClick={() => setCurrentIndex(idx)}
-                      className={`w-3 h-3 rounded-full transition duration-200 ${
-                        idx === currentIndex ? 'bg-blue-800' : 'bg-gray-300'
-                      }`}
-                    />
-                  ))}
-                </div>
+                <>
+                  <button
+                    onClick={prevImage}
+                    className="hidden md:block absolute left-4 top-1/2 transform -translate-y-1/2 z-10 bg-white/20 backdrop-blur-sm text-white p-3 rounded-full hover:bg-white/30 transition duration-200"
+                  >
+                    <FaChevronLeft />
+                  </button>
+                  <button
+                    onClick={nextImage}
+                    className="hidden md:block absolute right-4 top-1/2 transform -translate-y-1/2 z-10 bg-white/20 backdrop-blur-sm text-white p-3 rounded-full hover:bg-white/30 transition duration-200"
+                  >
+                    <FaChevronRight />
+                  </button>
+                </>
               )}
-              
-              {/* Кнопка обсудить проект */}
-              <div className="mt-6">
-                <button 
-                  onClick={() => {
-                    closeModal();
-                    openTelegram(selectedImage.title);
-                  }}
-                  className="w-full bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-bold py-3 px-4 rounded-lg transition duration-200"
-                >
-                  Обсудить проект
-                </button>
+            </div>
+            
+            {/* Информационная панель - всегда видна */}
+            <div className="bg-white rounded-b-lg md:rounded-b-lg mt-2 md:mt-4 overflow-hidden flex-shrink-0">
+              <div className="p-4 md:p-6 max-h-[40vh] md:max-h-auto overflow-y-auto">
+                <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-3 md:gap-0">
+                  <div className="flex-1">
+                    <h3 className="text-lg md:text-2xl font-bold text-gray-900 mb-2">{selectedImage.title}</h3>
+                    <p className="text-sm md:text-base text-gray-600 mb-4">{selectedImage.description}</p>
+                  </div>
+                  
+                  <div className="flex items-center justify-between md:flex-col md:items-end gap-2">
+                    {selectedImage.images && selectedImage.images.length > 0 && (
+                      <div className="text-sm text-gray-500">
+                        Фото {currentIndex + 1} из {selectedImage.images.length}
+                      </div>
+                    )}
+                    
+                    {/* Мобильные кнопки навигации */}
+                    {selectedImage.images && selectedImage.images.length > 1 && (
+                      <div className="flex gap-2">
+                        <button
+                          onClick={prevImage}
+                          className="md:hidden bg-gray-200 hover:bg-gray-300 text-gray-800 p-2 rounded-full"
+                        >
+                          <FaChevronLeft />
+                        </button>
+                        <button
+                          onClick={nextImage}
+                          className="md:hidden bg-gray-200 hover:bg-gray-300 text-gray-800 p-2 rounded-full"
+                        >
+                          <FaChevronRight />
+                        </button>
+                      </div>
+                    )}
+                  </div>
+                </div>
+                
+                {/* Индикаторы для десктопа */}
+                {selectedImage.images && selectedImage.images.length > 1 && (
+                  <div className="hidden md:flex gap-2 justify-center mt-4">
+                    {selectedImage.images.map((_, idx) => (
+                      <button
+                        key={idx}
+                        onClick={() => setCurrentIndex(idx)}
+                        className={`w-3 h-3 rounded-full transition duration-200 ${
+                          idx === currentIndex ? 'bg-blue-800' : 'bg-gray-300'
+                        }`}
+                      />
+                    ))}
+                  </div>
+                )}
+                
+                {/* Кнопка обсудить проект - всегда доступна */}
+                <div className="mt-4 md:mt-6">
+                  <button 
+                    onClick={() => {
+                      closeModal();
+                      openTelegram(selectedImage.title);
+                    }}
+                    className="w-full bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-bold py-3 px-4 rounded-lg transition duration-200"
+                  >
+                    Обсудить проект
+                  </button>
+                </div>
               </div>
             </div>
           </div>
