@@ -19,7 +19,7 @@ const Hero = () => {
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat z-0"
         style={{
-          backgroundImage: 'url("/756039515997738.jpg")',
+          backgroundImage: 'url("/cbs_background_1_black_opacity.png")',
         }}
       >
         <div className="absolute inset-0 bg-black/60"></div>
@@ -36,7 +36,7 @@ const Hero = () => {
           
           <p className="text-xl md:text-2xl mb-8 text-gray-200">
             Профессиональное строительство домов, ремонт квартир 
-            и отделочные работы. 15 лет на рынке. Гарантия 5 лет.
+            и отделочные работы. 10 лет на рынке. Гарантия 5 лет.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
@@ -57,8 +57,8 @@ const Hero = () => {
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-16">
             {[
-              { number: '15+', text: 'лет опыта' },
-              { number: '200+', text: 'проектов' },
+              { number: '10+', text: 'лет опыта' },
+              { number: '100+', text: 'проектов' },
               { number: '5 лет', text: 'гарантии' },
             ].map((item, index) => (
               <div 

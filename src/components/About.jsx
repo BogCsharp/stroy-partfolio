@@ -18,8 +18,8 @@ const About = () => {
 
   // Статистика компании
   const stats = [
-    { icon: <FaCalendarAlt />, value: '15+', label: 'Лет на рынке' },
-    { icon: <FaBuilding />, value: '200+', label: 'Завершённых проектов' },
+    { icon: <FaCalendarAlt />, value: '10+', label: 'Лет на рынке' },
+    { icon: <FaBuilding />, value: '100+', label: 'Завершённых проектов' },
     { icon: <FaUsers />, value: '50+', label: 'Специалистов' },
     { icon: <FaAward />, value: '100%', label: 'Довольных клиентов' },
   ];
@@ -62,7 +62,7 @@ const About = () => {
           </h2>
           <div className="w-24 h-1 bg-yellow-500 mx-auto mb-6"></div>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            «СтройДом» — это команда профессионалов с 15-летним опытом в строительстве. 
+            «СтройДом» — это команда профессионалов с 10-летним опытом в строительстве. 
             Мы превращаем ваши мечты о идеальном доме в реальность.
           </p>
         </div>
@@ -96,9 +96,9 @@ const About = () => {
               <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
               <div className="absolute bottom-8 left-8 right-8">
                 <div className="bg-white/90 backdrop-blur-sm p-6 rounded-xl">
-                  <h3 className="text-2xl font-bold text-gray-900 mb-2">Работаем с 2009 года</h3>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-2">Работаем с 2016 года</h3>
                   <p className="text-gray-700">
-                    За это время мы построили более 200 объектов и заработали репутацию надёжного подрядчика
+                    За это время мы построили более 100 объектов и заработали репутацию надёжного подрядчика
                   </p>
                 </div>
               </div>

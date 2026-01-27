@@ -31,8 +31,7 @@ const Clients = () => {
       name: 'Многие другие',
       description: 'Частные заказчики и компании из разных отраслей',
       projects: ['Частные дома', 'Коммерческая недвижимость', 'Объекты инфраструктуры'],
-      years: 'С 2009 года',
-      showLogo: false
+      years: 'С 2016 года',
     }
   ];
 
@@ -59,22 +58,28 @@ const Clients = () => {
               className="bg-gradient-to-br from-gray-50 to-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 text-center"
             >
               {/* Иконка/логотип */}
-              {/* Простое отображение лого */}
-<div className="flex justify-center mb-4">
-  <div className="w-20 h-20 bg-white rounded-lg shadow-sm flex items-center justify-center p-2">
-    <img 
-      src={client.logo} 
-      alt={client.name}
-      className="w-full h-full object-scale-down"
-    />
-  </div>
-</div>
+              <div className="flex justify-center mb-4">
+                {client.logo ? (
+                  <div className="w-20 h-20 bg-white rounded-lg shadow-sm flex items-center justify-center p-2">
+                    <img 
+                      src={client.logo} 
+                      alt={client.name}
+                      className="w-full h-full object-scale-down"
+                    />
+                  </div>
+                ) : (
+                  // Иконка для "Многие другие"
+                  <div className="w-20 h-20 bg-gradient-to-br from-blue-100 to-gray-100 rounded-full flex items-center justify-center">
+                    <div className="text-3xl"></div>
+                  </div>
+                )}
+              </div>
               
               {/* Название компании */}
               <h3 className="text-xl font-bold text-gray-900 mb-2">{client.name}</h3>
               
               {/* Годы сотрудничества */}
-              <div className="inline-block bg-yellow-100 text-yellow-800 text-sm font-semibold px-3 py-1 rounded-full mb-3">
+              <div className={`inline-block ${client.id === 4 ? 'bg-blue-100 text-blue-800' : 'bg-yellow-100 text-yellow-800'} text-sm font-semibold px-3 py-1 rounded-full mb-3`}>
                 {client.years}
               </div>
               
@@ -87,7 +92,7 @@ const Clients = () => {
                 <ul className="space-y-1">
                   {client.projects.map((project, idx) => (
                     <li key={idx} className="flex items-start text-gray-700 text-xs">
-                      <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mt-1 mr-2 flex-shrink-0"></div>
+                      <div className={`w-1.5 h-1.5 ${client.id === 4 ? 'bg-blue-500' : 'bg-blue-500'} rounded-full mt-1 mr-2 flex-shrink-0`}></div>
                       <span>{project}</span>
                     </li>
                   ))}
