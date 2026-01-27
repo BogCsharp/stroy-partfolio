@@ -19,8 +19,8 @@ const About = () => {
   // Статистика компании
   const stats = [
     { icon: <FaCalendarAlt />, value: '10+', label: 'Лет на рынке' },
-    { icon: <FaBuilding />, value: '100+', label: 'Завершённых проектов' },
-    { icon: <FaUsers />, value: '50+', label: 'Специалистов' },
+    { icon: <FaBuilding />, value: '100+', label: 'Выполненных работ' },
+    { icon: <FaChevronDown />, value: '50+', label: 'Сданных объектов ' },
     { icon: <FaAward />, value: '100%', label: 'Довольных клиентов' },
   ];
 
@@ -89,7 +89,7 @@ const About = () => {
           <div className="relative">
             <div className="relative rounded-2xl overflow-hidden shadow-2xl">
               <img 
-                src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+                src="/0.jpg"
                 alt="Наша команда на строительной площадке"
                 className="w-full h-auto"
               />
