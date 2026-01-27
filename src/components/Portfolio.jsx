@@ -108,7 +108,7 @@ const Portfolio = () => {
   // Обработчик для видео-проектов
   const handleProjectClick = (project, index = 0) => {
     if (project.mediaType === 'video') {
-      // Для видео открываем в новой вкладке или показываем плеер
+      // Для видео открываем в новой вкладке
       window.open(project.video, '_blank');
     } else {
       // Для фото открываем модальное окно
@@ -138,9 +138,9 @@ const Portfolio = () => {
               key={project.id} 
               className="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden group flex flex-col h-full"
             >
-              {/* Изображение/видео проекта */}
+              {/* Изображение/видео проекта - ФИКСИРОВАННАЯ ВЕРСИЯ */}
               <div 
-                className="relative h-64 overflow-hidden cursor-pointer flex-shrink-0"
+                className="relative h-64 w-full overflow-hidden cursor-pointer flex-shrink-0"
                 onClick={() => handleProjectClick(project, 0)}
               >
                 {project.mediaType === 'video' ? (
@@ -149,7 +149,11 @@ const Portfolio = () => {
                     <img 
                       src={project.thumbnail} 
                       alt={project.title}
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                      className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                      onLoad={(e) => {
+                        e.target.style.opacity = '1';
+                      }}
+                      style={{ opacity: 0, transition: 'opacity 0.3s' }}
                     />
                     <div className="absolute inset-0 bg-black/50 flex items-center justify-center">
                       <div className="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center">
@@ -163,13 +167,18 @@ const Portfolio = () => {
                     </div>
                   </>
                 ) : (
-                  // ФОТО ПРОЕКТ
+                  // ФОТО ПРОЕКТ - ФИКСИРОВАННАЯ ВЕРСИЯ
                   <>
                     <img 
                       src={project.image} 
                       alt={project.title}
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                      className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                       loading="lazy"
+                      onLoad={(e) => {
+                        // Плавное появление фото
+                        e.target.style.opacity = '1';
+                      }}
+                      style={{ opacity: 0, transition: 'opacity 0.3s' }}
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                       <div className="absolute bottom-4 right-4">
@@ -182,21 +191,22 @@ const Portfolio = () => {
                 )}
               </div>
 
-             {/* Контент проекта */}
-<div className="p-6 flex flex-col flex-grow">
-  <div className="flex justify-between items-start mb-3">
-    <h3 className="text-xl font-bold text-gray-900">{project.title}</h3>
-    <span className="bg-yellow-100 text-yellow-800 text-sm font-semibold px-3 py-1 rounded-full">
-      {project.year}
-    </span>
-  </div>
-  
-  {/* Описание с фиксированной высотой и прокруткой */}
-  <div className="mb-4 flex-grow min-h-0">
-    <div className="text-gray-600 text-sm h-24 overflow-y-auto pr-2">
-      {project.description}
-    </div>
-  </div>
+              {/* Контент проекта */}
+              <div className="p-6 flex flex-col flex-grow">
+                <div className="flex justify-between items-start mb-3">
+                  <h3 className="text-xl font-bold text-gray-900">{project.title}</h3>
+                  <span className="bg-yellow-100 text-yellow-800 text-sm font-semibold px-3 py-1 rounded-full">
+                    {project.year}
+                  </span>
+                </div>
+                
+                {/* Описание с фиксированной высотой и прокруткой */}
+                <div className="mb-4 flex-grow min-h-0">
+                  <div className="text-gray-600 text-sm h-24 overflow-y-auto pr-2">
+                    {project.description}
+                  </div>
+                </div>
+                
                 {/* Характеристики (Площадь и Срок) */}
                 <div className="grid grid-cols-2 gap-3 mb-6">
                   <div className="flex items-center text-gray-700">
