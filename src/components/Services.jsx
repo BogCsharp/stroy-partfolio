@@ -250,16 +250,15 @@ const Services = () => {
               Предоставляем официальную гарантию 5 лет на все виды работ.
             </p>
             <button 
-              className="inline-flex items-center bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg transition duration-300"
-              onClick={() => {
-                const contactSection = document.getElementById('contact');
-                if (contactSection) {
-                  contactSection.scrollIntoView({ behavior: 'smooth' });
-                }
-              }}
-            >
-              Получить бесплатную консультацию
-            </button>
+  className="inline-flex items-center bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg transition duration-300 hover:scale-105 active:scale-95"
+  onClick={() => {
+    const message = 'Здравствуйте! Хочу получить бесплатную консультацию по строительству. Перешёл с сайта stroydom.ru';
+    const username = 'stroydom_consultant'; // ЗАМЕНИ НА СВОЙ USERNAME
+    window.open(`https://t.me/${username}?start=${encodeURIComponent(message)}`, '_blank');
+  }}
+>
+  Получить бесплатную консультацию
+</button>
           </div>
         </div>
       </div>

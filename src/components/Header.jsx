@@ -62,7 +62,6 @@ const Header = () => {
     { name: 'Услуги', id: 'services' },
     { name: 'Портфолио', id: 'portfolio' },
     { name: 'О нас', id: 'about' },
-    { name: 'Контакты', id: 'contact' },
   ];
 
   return (

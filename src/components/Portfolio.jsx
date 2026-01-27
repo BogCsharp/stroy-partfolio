@@ -25,7 +25,7 @@ const Portfolio = () => {
     {
       id: 2,
       title: 'Дизайнерские конструкции из дерева',
-      description: 'SOLOLAKI cafe',
+      description: 'Долговечные сооружения из бруса , сочетающие функциональность с природной эстетикой. SOLOLAKI cafe.',
       year: '2023',
       area: '85 м²',
       duration: '3 месяца',
@@ -45,8 +45,7 @@ const Portfolio = () => {
     {
       id: 4,
       title: 'Монтаж алюминиевых витражей',
-      description: 'Сборка светопрозрачных конструкций из стоек и ригелей, которая включает подготовку проема, установку алюминиевого каркаса, монтаж стеклопакетов с использованием вакуумных присосок, герметизацию и установку прижимных планок.',
-      year: '2022',
+      description: 'Сборка светопрозрачных конструкций из стоек и ригелей, подготовка проема, установка алюминиевого каркаса, монтаж стеклопакетов',
       area: '500 м²',
       duration: '4 месяца',
       image: '/5458725278432562133.jpg',
@@ -183,17 +182,21 @@ const Portfolio = () => {
                 )}
               </div>
 
-              {/* Контент проекта */}
-              <div className="p-6 flex flex-col flex-grow">
-                <div className="flex justify-between items-start mb-3">
-                  <h3 className="text-xl font-bold text-gray-900">{project.title}</h3>
-                  <span className="bg-yellow-100 text-yellow-800 text-sm font-semibold px-3 py-1 rounded-full">
-                    {project.year}
-                  </span>
-                </div>
-                
-                <p className="text-gray-600 mb-4 text-sm flex-grow">{project.description}</p>
-                
+             {/* Контент проекта */}
+<div className="p-6 flex flex-col flex-grow">
+  <div className="flex justify-between items-start mb-3">
+    <h3 className="text-xl font-bold text-gray-900">{project.title}</h3>
+    <span className="bg-yellow-100 text-yellow-800 text-sm font-semibold px-3 py-1 rounded-full">
+      {project.year}
+    </span>
+  </div>
+  
+  {/* Описание с фиксированной высотой и прокруткой */}
+  <div className="mb-4 flex-grow min-h-0">
+    <div className="text-gray-600 text-sm h-24 overflow-y-auto pr-2">
+      {project.description}
+    </div>
+  </div>
                 {/* Характеристики (Площадь и Срок) */}
                 <div className="grid grid-cols-2 gap-3 mb-6">
                   <div className="flex items-center text-gray-700">
