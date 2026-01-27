@@ -51,39 +51,6 @@ const About = () => {
       details: 'Чёткое планирование, профессиональная команда, современное оборудование'
     },
   ];
-
-  // Команда
-  const team = [
-    {
-      name: 'Иван Петров',
-      position: 'Генеральный директор',
-      experience: '20 лет в строительстве',
-      description: 'Основатель компании, инженер-строитель высшей категории',
-      photo: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80'
-    },
-    {
-      name: 'Анна Смирнова',
-      position: 'Технический директор',
-      experience: '15 лет опыта',
-      description: 'Специалист по проектированию и сметному делу',
-      photo: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80'
-    },
-    {
-      name: 'Сергей Козлов',
-      position: 'Главный прораб',
-      experience: '12 лет на объектах',
-      description: 'Контроль качества и сроков выполнения работ',
-      photo: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80'
-    },
-    {
-      name: 'Мария Иванова',
-      position: 'Дизайнер-проектировщик',
-      experience: '10 лет в дизайне',
-      description: 'Создание дизайн-проектов и 3D визуализаций',
-      photo: 'https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80'
-    },
-  ];
-
  
   return (
     <section id="about" className="py-20 bg-white">

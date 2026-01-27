@@ -29,8 +29,9 @@ const Hero = () => {
         <div className="max-w-3xl mx-auto">
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
             Строительство 
-            <span className="text-yellow-400"> под ключ</span> 
-            в Москве и области
+            <span className="text-yellow-400"> под ключ </span> 
+             Владимир и область
+            
           </h1>
           
           <p className="text-xl md:text-2xl mb-8 text-gray-200">
