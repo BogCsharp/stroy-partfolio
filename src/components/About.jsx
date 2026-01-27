@@ -89,7 +89,7 @@ const About = () => {
           <div className="relative">
             <div className="relative rounded-2xl overflow-hidden shadow-2xl">
               <img 
-                src="/0.jpg"
+                src="/0.webp"
                 alt="Наша команда на строительной площадке"
                 className="w-full h-auto"
               />
