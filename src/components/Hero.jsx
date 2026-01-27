@@ -16,7 +16,7 @@ const Hero = () => {
 
   return (
     
-    <section id="home" className="relative pt-16 md:pt-0 min-h-screen flex items-center justify-center overflow-hidden">
+    <section id="home" className="relative pt-24 md:pt-0 min-h-screen flex items-center justify-center overflow-hidden">
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat z-0"
         style={{
