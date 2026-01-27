@@ -43,14 +43,14 @@ const Hero = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
             <button
               onClick={openTelegram}
-              className="bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-bold py-4 px-8 rounded-lg text-lg transition duration-200 transform hover:scale-105"
+              className="bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-bold py-4 px-8 rounded-lg text-lg transition duration-200 transform hover:scale-105 cursor-pointer"
             >
              Бесплатная консультация
             </button>
             
             <button
               onClick={() => scrollTo('portfolio')}
-              className="bg-transparent border-2 border-white hover:bg-white/10 text-white font-bold py-4 px-8 rounded-lg text-lg transition duration-200"
+              className="bg-transparent border-2 border-white hover:bg-white/10 text-white font-bold py-4 px-8 rounded-lg text-lg transition duration-200 cursor-pointer"
             >
               Смотреть работы
             </button>

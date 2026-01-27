@@ -98,7 +98,7 @@ const About = () => {
                 <div className="bg-white/90 backdrop-blur-sm p-6 rounded-xl">
                   <h3 className="text-2xl font-bold text-gray-900 mb-2">Работаем с 2016 года</h3>
                   <p className="text-gray-700">
-                    За это время мы построили более 100 объектов и заработали репутацию надёжного подрядчика
+                    За это время мы построили более 50 объектов и заработали репутацию надёжного подрядчика
                   </p>
                 </div>
               </div>
@@ -148,9 +148,12 @@ const About = () => {
             Оставьте заявку и получите бесплатную консультацию
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-bold py-4 px-8 rounded-lg text-lg transition duration-200">
-              Заказать консультацию
-            </button>
+            <button 
+  onClick={() => window.open('https://t.me/stroydom_consultant', '_blank')}
+  className="bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-bold py-4 px-8 rounded-lg text-lg transition duration-200 cursor-pointer"
+>
+  Заказать консультацию
+</button>
 
           </div>
         </div>

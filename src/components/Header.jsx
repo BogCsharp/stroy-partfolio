@@ -74,21 +74,21 @@ const Header = () => {
             onClick={() => scrollTo('home')}
           >
             <div className="w-10 h-10 bg-blue-800 rounded-lg flex items-center justify-center group-hover:bg-blue-900 transition-colors duration-200">
-              <span className="text-white font-bold text-xl">С</span>
+              <span className="text-white font-bold text-xl">В</span>
             </div>
             <div>
-              <h1 className="text-xl font-bold text-gray-900">СтройДом</h1>
+              <h1 className="text-xl font-bold text-gray-900">ВладСтрой</h1>
               <p className="text-sm text-gray-600">Строительная компания</p>
             </div>
           </div>
 
           {/* Десктопное меню */}
-          <nav className="hidden md:flex items-center space-x-1">
+          <nav className="hidden md:flex items-center space-x-1 ">
             {navItems.map((item) => (
               <button
                 key={item.name}
                 onClick={() => scrollTo(item.id)}
-                className={`px-4 py-2 rounded-lg font-medium transition-all duration-200 ${
+                className={`px-4 py-2 rounded-lg font-medium transition-all duration-200 cursor-pointer ${
                   activeSection === item.id
                     ? 'bg-blue-100 text-blue-800'
                     : 'text-gray-700 hover:bg-gray-100 hover:text-blue-800'

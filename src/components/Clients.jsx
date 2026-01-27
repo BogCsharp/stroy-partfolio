@@ -137,7 +137,7 @@ const Clients = () => {
                 const username = 'stroydom_consultant';
                 window.open(`https://t.me/${username}?start=${encodeURIComponent(message)}`, '_blank');
               }}
-              className="inline-flex items-center bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-bold py-3 px-8 rounded-lg text-lg transition duration-200"
+              className="inline-flex items-center bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-bold py-3 px-8 rounded-lg text-lg transition duration-200 cursor-pointer"
             >
               Обсудить сотрудничество
             </button>
