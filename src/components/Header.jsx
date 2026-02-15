@@ -73,11 +73,13 @@ const Header = () => {
             className="flex items-center space-x-2 cursor-pointer group" 
             onClick={() => scrollTo('home')}
           >
-            <div className="w-10 h-10 bg-blue-800 rounded-lg flex items-center justify-center group-hover:bg-blue-900 transition-colors duration-200">
-              <span className="text-white font-bold text-xl">В</span>
-            </div>
+            <img
+    src="/public/favicon.webp"  
+    alt="СВК Строительная компания"
+    className="h-12 w-auto"  
+  />
             <div>
-              <h1 className="text-xl font-bold text-gray-900">ВладСтрой</h1>
+              <h1 className="text-xl font-bold text-gray-900">ООО "СВК"</h1>
               <p className="text-sm text-gray-600">Строительная компания</p>
             </div>
           </div>
@@ -106,7 +108,7 @@ const Header = () => {
               className="flex items-center space-x-2 bg-blue-800 text-white px-5 py-2.5 rounded-lg hover:bg-blue-900 transition-all duration-200 hover:scale-105 active:scale-95"
             >
               <FaPhone />
-              <span className="font-semibold">+7 (999) 123-45-67</span>
+              <span className="font-semibold">+7 (915) 751 44 14</span>
             </a>
           </div>
 
