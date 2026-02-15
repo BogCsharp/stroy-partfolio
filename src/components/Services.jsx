@@ -117,7 +117,7 @@ const Services = () => {
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
             Наши услуги
           </h2>
-          <div className="w-24 h-1 bg-yellow-500 mx-auto mb-6"></div>
+          <div className="w-24 h-1 bg-blue-800 mx-auto mb-6"></div>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Предоставляем полный спектр строительных услуг от проектирования 
             до финальной отделки. Работаем по договору с фиксированной сметой.
@@ -142,10 +142,9 @@ const Services = () => {
                 >
                   <div className="flex-1">
                     <div className="flex items-start justify-between mb-4">
-                      <div className="w-16 h-16 bg-yellow-100 rounded-xl flex items-center justify-center text-yellow-600">
-                        {service.icon}
-                      </div>
-                      {/* Ценник УДАЛЁН */}
+                      <div className="w-16 h-16 bg-blue-800 rounded-xl flex items-center justify-center text-white">
+  {service.icon}
+</div>
                     </div>
                     
                     <h3 className="text-2xl font-bold text-gray-900 mb-2">
@@ -158,7 +157,7 @@ const Services = () => {
                   </div>
                   
                   <div className="flex items-center justify-between pt-4 border-t border-gray-100 mt-4">
-                    <span className="text-yellow-600 font-semibold">
+                    <span className="text-red-500 font-semibold">
                       {isServiceExpanded(service.id) ? 'Скрыть детали' : 'Подробнее'}
                     </span>
                     <FaChevronDown 
@@ -188,10 +187,9 @@ const Services = () => {
                       
                       <div className="flex flex-col sm:flex-row gap-3">
                         <button 
-                          className="flex-1 bg-yellow-500 hover:bg-yellow-600 text-white font-medium py-2.5 px-4 rounded-lg transition duration-300 text-sm"
+                          className="flex-1 bg-red-500 hover:bg-yellow-600 text-white font-medium py-2.5 px-4 rounded-lg transition duration-300 text-sm"
                           onClick={(e) => {
                             e.stopPropagation();
-                            // Цена убрана из сообщения
                             const message = `Здравствуйте! Интересует услуга: "${service.title}". Хочу заказать консультацию.`;
                             const username = 'nvmev';
                             window.open(`https://t.me/${username}?start=${encodeURIComponent(message)}`, '_blank');

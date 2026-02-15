@@ -19,13 +19,13 @@ const Portfolio = () => {
       description: 'Подготовка основания, монтаж опалубки, армирование, укладка/уплотнение бетонной смеси и уход за ней',
       year: '2023',
       area: '250 м²',
-      duration: '8 месяцев',
+      duration: '3 месяца',
       image: '/5458725278432562120.webp',
       images: ['/5458725278432562120.webp','/5458725278432562119.webp','/5458725278432562118.webp',]
     },
     {
       id: 2,
-      title: 'Дизайнерские конструкции из дерева',
+      title: 'Дизайнерские конструкции и сооружения из дерева',
       description: 'Долговечные сооружения из бруса , сочетающие функциональность с природной эстетикой. SOLOLAKI cafe.',
       year: '2023',
       area: '85 м²',
@@ -47,6 +47,7 @@ const Portfolio = () => {
       id: 4,
       title: 'Монтаж алюминиевых витражей',
       description: 'Сборка светопрозрачных конструкций из стоек и ригелей, подготовка проема, установка алюминиевого каркаса, монтаж стеклопакетов',
+      year: '2023',
       area: '500 м²',
       duration: '4 месяца',
       image: '/5458725278432562133.webp',
@@ -58,7 +59,7 @@ const Portfolio = () => {
       description: 'Комплекс строительно-инженерных мероприятий по созданию прочных покрытий',
       year: '2023',
       area: '650 м²',
-      duration: '1.5 месяца',
+      duration: '4 месяца',
       mediaType: 'video',
       video: '/video5456473478158915373.mp4',
       thumbnail: '/xf28l39ys58yunug4qc4u3zpa6v5kger.webp',
@@ -123,7 +124,7 @@ const Portfolio = () => {
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
             Наши работы
           </h2>
-          <div className="w-24 h-1 bg-yellow-500 mx-auto mb-6"></div>
+          <div className="w-24 h-1 bg-blue-800 mx-auto mb-6"></div>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Реализованные проекты, которые говорят сами за себя. 
             Каждая работа — это пример нашего профессионализма и внимания к деталям.
@@ -193,7 +194,7 @@ const Portfolio = () => {
               <div className="p-6 flex flex-col flex-grow">
                 <div className="flex justify-between items-start mb-3">
                   <h3 className="text-xl font-bold text-gray-900">{project.title}</h3>
-                  <span className="bg-yellow-100 text-yellow-800 text-sm font-semibold px-3 py-1 rounded-full">
+                  <span className="bg-red-100 text-red-800 text-sm font-semibold px-3 py-1 rounded-full">
                     {project.year}
                   </span>
                 </div>
@@ -247,7 +248,7 @@ const Portfolio = () => {
                   </button>
                   <button 
                     onClick={() => openTelegram(project.title)}
-                    className="px-4 bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-semibold py-3 rounded-lg transition duration-200 text-sm cursor-pointer"
+                    className="px-4 bg-red-500 hover:bg-yellow-600 text-gray-900 font-semibold py-3 rounded-lg transition duration-200 text-sm cursor-pointer"
                   >
                     Обсудить проект
                   </button>
@@ -360,7 +361,7 @@ const Portfolio = () => {
                       closeModal();
                       openTelegram(selectedImage.title);
                     }}
-                    className="w-full bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-bold py-3 px-4 rounded-lg transition duration-200 cursor-pointer"
+                    className="w-full bg-red-500 hover:bg-red-600 text-gray-900 font-bold py-3 px-4 rounded-lg transition duration-200 cursor-pointer"
                   >
                     Обсудить проект
                   </button>

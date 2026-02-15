@@ -43,7 +43,7 @@ const Clients = () => {
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
             Наши клиенты
           </h2>
-          <div className="w-24 h-1 bg-yellow-500 mx-auto mb-6"></div>
+          <div className="w-24 h-1 bg-blue-800 mx-auto mb-6"></div>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Мы гордимся сотрудничеством с крупными компаниями и частными заказчиками. 
             Каждый проект — это доверие, которое мы оправдываем качеством работ.
@@ -137,7 +137,7 @@ const Clients = () => {
                 const username = 'stroydom_consultant';
                 window.open(`https://t.me/${username}?start=${encodeURIComponent(message)}`, '_blank');
               }}
-              className="inline-flex items-center bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-bold py-3 px-8 rounded-lg text-lg transition duration-200 cursor-pointer"
+              className="inline-flex items-center bg-red-500 hover:bg-yellow-600 text-gray-900 font-bold py-3 px-8 rounded-lg text-lg transition duration-200 cursor-pointer"
             >
               Обсудить сотрудничество
             </button>
