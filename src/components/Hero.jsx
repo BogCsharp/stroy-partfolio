@@ -43,7 +43,7 @@ const Hero = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
             <button
               onClick={openTelegram}
-              className="bg-blue-800 hover:bg-yellow-600 text-gray-900 font-bold py-4 px-8 rounded-lg text-lg transition duration-200 transform hover:scale-105 cursor-pointer"
+              className="bg-blue-800 hover:bg-yellow-600 text-white font-bold py-4 px-8 rounded-lg text-lg transition duration-200 transform hover:scale-105 cursor-pointer"
             >
              Бесплатная консультация
             </button>

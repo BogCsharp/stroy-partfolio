@@ -74,7 +74,7 @@ const Header = () => {
             onClick={() => scrollTo('home')}
           >
             <img
-    src="/public/icon.webp"  
+    src="/public/favicon.png"  
     alt="СВК Строительная компания"
     className="h-12 w-auto"  
   />
