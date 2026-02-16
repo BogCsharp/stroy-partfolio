@@ -60,9 +60,9 @@ const About = () => {
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
             О компании
           </h2>
-          <div className="w-24 h-1 bg-blue-800 mx-auto mb-6"></div>
+          <div className="w-24 h-1 bg-yellow-500 mx-auto mb-6"></div>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            «СтройДом» — это команда профессионалов с 10-летним опытом в строительстве. 
+            Мы команда профессионалов с 10-летним опытом в строительстве. 
             Мы превращаем ваши мечты о идеальном доме в реальность.
           </p>
         </div>
@@ -150,7 +150,7 @@ const About = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button 
   onClick={() => window.open('https://t.me/stroydom_consultant', '_blank')}
-  className="bg-red-500 hover:bg-yellow-600 text-gray-900 font-bold py-4 px-8 rounded-lg text-lg transition duration-200 cursor-pointer"
+  className="bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-bold py-4 px-8 rounded-lg text-lg transition duration-200 cursor-pointer"
 >
   Заказать консультацию
 </button>

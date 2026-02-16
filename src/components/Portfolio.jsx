@@ -124,7 +124,7 @@ const Portfolio = () => {
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
             Наши работы
           </h2>
-          <div className="w-24 h-1 bg-blue-800 mx-auto mb-6"></div>
+          <div className="w-24 h-1 bg-yellow-500 mx-auto mb-6"></div>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Реализованные проекты, которые говорят сами за себя. 
             Каждая работа — это пример нашего профессионализма и внимания к деталям.
@@ -230,7 +230,7 @@ const Portfolio = () => {
                 <div className="flex gap-3 mt-auto">
                   <button 
                     onClick={() => handleProjectClick(project, 0)}
-                    className="flex-1 bg-blue-800 hover:bg-blue-900 text-white font-semibold py-3 rounded-lg transition duration-200 flex items-center justify-center gap-2 text-sm cursor-pointer"
+                    className="flex-1 bg-red-500 hover:bg-blue-900 text-white font-semibold py-3 rounded-lg transition duration-200 flex items-center justify-center gap-2 text-sm cursor-pointer"
                   >
                     {project.mediaType === 'video' ? (
                       <>
@@ -248,7 +248,7 @@ const Portfolio = () => {
                   </button>
                   <button 
                     onClick={() => openTelegram(project.title)}
-                    className="px-4 bg-red-500 hover:bg-yellow-600 text-gray-900 font-semibold py-3 rounded-lg transition duration-200 text-sm cursor-pointer"
+                    className="px-4 bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-semibold py-3 rounded-lg transition duration-200 text-sm cursor-pointer"
                   >
                     Обсудить проект
                   </button>
@@ -361,7 +361,7 @@ const Portfolio = () => {
                       closeModal();
                       openTelegram(selectedImage.title);
                     }}
-                    className="w-full bg-red-500 hover:bg-red-600 text-gray-900 font-bold py-3 px-4 rounded-lg transition duration-200 cursor-pointer"
+                    className="w-full bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-bold py-3 px-4 rounded-lg transition duration-200 cursor-pointer"
                   >
                     Обсудить проект
                   </button>

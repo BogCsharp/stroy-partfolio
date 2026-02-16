@@ -30,7 +30,7 @@ const Hero = () => {
         <div className="max-w-3xl mx-auto">
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
             Строительство 
-            <span className="text-blue-800"> под ключ </span> 
+            <span className="text-yellow-500"> под ключ </span> 
              Владимир и область
             
           </h1>
@@ -43,7 +43,7 @@ const Hero = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
             <button
               onClick={openTelegram}
-              className="bg-blue-800 hover:bg-yellow-600 text-white font-bold py-4 px-8 rounded-lg text-lg transition duration-200 transform hover:scale-105 cursor-pointer"
+              className="bg-yellow-600 hover:bg-yellow-600 text-white font-bold py-4 px-8 rounded-lg text-lg transition duration-200 transform hover:scale-105 cursor-pointer"
             >
              Бесплатная консультация
             </button>
@@ -66,7 +66,7 @@ const Hero = () => {
                 key={index} 
                 className="bg-white/10 backdrop-blur-sm p-6 rounded-xl border border-white/20"
               >
-                <div className="text-3xl font-bold text-red-500 mb-2">{item.number}</div>
+                <div className="text-3xl font-bold text-white mb-2">{item.number}</div>
                 <div className="text-lg">{item.text}</div>
               </div>
             ))}

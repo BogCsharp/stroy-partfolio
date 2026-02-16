@@ -117,7 +117,7 @@ const Services = () => {
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
             Наши услуги
           </h2>
-          <div className="w-24 h-1 bg-blue-800 mx-auto mb-6"></div>
+          <div className="w-24 h-1 bg-yellow-500 mx-auto mb-6"></div>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Предоставляем полный спектр строительных услуг от проектирования 
             до финальной отделки. Работаем по договору с фиксированной сметой.
@@ -142,7 +142,7 @@ const Services = () => {
                 >
                   <div className="flex-1">
                     <div className="flex items-start justify-between mb-4">
-                      <div className="w-16 h-16 bg-blue-800 rounded-xl flex items-center justify-center text-white">
+                      <div className="w-16 h-16 bg-yellow-500 rounded-xl flex items-center justify-center text-white">
   {service.icon}
 </div>
                     </div>
@@ -157,7 +157,7 @@ const Services = () => {
                   </div>
                   
                   <div className="flex items-center justify-between pt-4 border-t border-gray-100 mt-4">
-                    <span className="text-red-500 font-semibold">
+                    <span className="text-black font-semibold">
                       {isServiceExpanded(service.id) ? 'Скрыть детали' : 'Подробнее'}
                     </span>
                     <FaChevronDown 
